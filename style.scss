@@ -1,10 +1,11 @@
 $background-image-path: "/public/img/sonnig.png";
 $background-image-icon: "/public/img/weather-icons.png";
 $background-color: rgba(180, 180, 180, 0.336);
-$margin-center: auto;
+$margin-center: 0 auto;
 $radius: 10px;
 $sonnig: -140px -400px;
 $bewolkt: -130px -280px;
+$text-color: white;
 
 body {
   margin: 0;
@@ -34,12 +35,12 @@ body {
   height: 200px;
   text-align: center;
   margin: $margin-center;
-  display: flex;
+  display: block;
 
   #CityName {
     text-align: left;
     margin-left: 20px;
-    color: white;
+    color: $text-color;
   }
 
   #img {
@@ -49,32 +50,55 @@ body {
     background-image: url($background-image-icon);
     margin-left: 20px;
   }
+
+  #temperature {
+    margin-top: -110px;
+    font-size: 35px;
+    margin-left: -60px;
+    color: $text-color;
+  }
+
+  #infoNew {
+    color: $text-color;
+    font-size: 20px;
+    margin-top: -30px;
+    margin-left: -70px;
+  }
+
+  #time {
+    margin-top: -180px;
+    font-size: 25px;
+    color: $text-color;
+    margin-left: 250px;
+  }
+
+  #highestanddeepest {
+    color: $text-color;
+    margin-left: 200px;
+    font-size: 20px;
+    margin-top: 40px;
+  }
+}
+
+@mixin section-style {
+  width: 90%;
+  height: 150px;
+  background-color: $background-color;
+  margin: $margin-center;
+  border-radius: $radius;
+  text-align: center;
 }
 
 #courseOfDay {
-  height: 150px;
-  width: 90%;
-  background-color: $background-color;
-  margin: $margin-center;
-  border-radius: $radius;
-  text-align: center;
+  @include section-style;
 }
 
 #prediction {
-  width: 90%;
-  height: 150px;
-  background-color: $background-color;
-  margin: $margin-center;
-  border-radius: $radius;
-  text-align: center;
+  @include section-style;
 }
 
 #moreInfo {
-  width: 90%;
+  @include section-style;
   height: 200px;
-  background-color: $background-color;
-  margin: $margin-center;
-  border-radius: $radius;
-  text-align: center;
   margin-top: 20px;
 }

@@ -24,8 +24,8 @@ body {
 .mainView {
   height: 200px;
   text-align: center;
-  margin: auto;
-  display: flex;
+  margin: 0 auto;
+  display: block;
 }
 .mainView #CityName {
   text-align: left;
@@ -39,12 +39,36 @@ body {
   background-image: url("/public/img/weather-icons.png");
   margin-left: 20px;
 }
+.mainView #temperature {
+  margin-top: -110px;
+  font-size: 35px;
+  margin-left: -60px;
+  color: white;
+}
+.mainView #infoNew {
+  color: white;
+  font-size: 20px;
+  margin-top: -30px;
+  margin-left: -70px;
+}
+.mainView #time {
+  margin-top: -180px;
+  font-size: 25px;
+  color: white;
+  margin-left: 250px;
+}
+.mainView #highestanddeepest {
+  color: white;
+  margin-left: 200px;
+  font-size: 20px;
+  margin-top: 40px;
+}
 
 #courseOfDay {
-  height: 150px;
   width: 90%;
+  height: 150px;
   background-color: rgba(180, 180, 180, 0.336);
-  margin: auto;
+  margin: 0 auto;
   border-radius: 10px;
   text-align: center;
 }
@@ -53,18 +77,19 @@ body {
   width: 90%;
   height: 150px;
   background-color: rgba(180, 180, 180, 0.336);
-  margin: auto;
+  margin: 0 auto;
   border-radius: 10px;
   text-align: center;
 }
 
 #moreInfo {
   width: 90%;
-  height: 200px;
+  height: 150px;
   background-color: rgba(180, 180, 180, 0.336);
-  margin: auto;
+  margin: 0 auto;
   border-radius: 10px;
   text-align: center;
+  height: 200px;
   margin-top: 20px;
 }
 
