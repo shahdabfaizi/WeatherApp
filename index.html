@@ -4,39 +4,52 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="java.js"></script>
+    <link rel="stylesheet" href="style/style.css">
     <title>Document</title>
   </head>
   <body>
     <main>
-      <!-- Aktuelle CityName, Temperatur, Wetter, Höchste & Tiefste -->
-      <div name="mainView">
-        <h1 id="CityName">Wesendorf</h1>
-        <h3 id="temperature">23°C</h3>
-        <h6 id="infoNew">Sonnig</h6>
-        <h6 id="highest&deepest">
-          <p>H: 26°C</p>
-          <p>T: 1°C</p>
-        </h6>
-      </div>
-      <!-- gesammt verlauf von dem ganzen tag uhrzeiten, wetterbedinungen, und gradzahlen -->
-      <div id="courseOfDay">
-        <div id="days">
-          <p>Sonntag</p>
-          <img src="#" name="icon" />
-          <p>20°C</p>
+      <div id="weaterInformation">
+        <div class="weaterInformation__buttons">
+          <button>Back</button>
+          <button>Favorit</button>
         </div>
-      </div>
-      <!-- vorhersagen für die nächste 4 tagen -->
-      <div id="prediction">
-        <div id="dayOne">
-          <p>Heute</p>
-          <img src="#" name="icon" />
-          <p>H:20°C</p>
-          <p>T:2°C</p>
-          <p>Wind: 15.2 km/h</p>
+        <!-- Aktuelle CityName, Temperatur, Wetter, Höchste & Tiefste -->
+        <div class="mainView">
+          <div>
+            <h1 id="CityName">Wesendorf</h1>
+            <div id="img"></div>
+            <h3 id="temperature">23°C</h3>
+          </div>
+          <h6 id="infoNew">Sonnig</h6>
+          <h6 id="highest&deepest">
+            <p>H: 26°C</p>
+            <p>T: 1°C</p>
+          </h6>
         </div>
+        <!-- gesammt verlauf von dem ganzen tag uhrzeiten, wetterbedinungen, und gradzahlen -->
+        <div id="courseOfDay">
+          <div id="days">
+            <p>Sonntag</p1>
+            <img src="#" name="icon" />
+            <p>20°C</p>
+          </div>
+        </div>
+        <!-- vorhersagen für die nächste 4 tagen -->
+        <div id="prediction">
+          <div id="dayOne">
+            <p>Heute</p>
+            <img src="#" name="icon" />
+            <p>H:20°C</p>
+            <p>T:2°C</p>
+            <p>Wind: 15.2 km/h</p>
+          </div>
+        </div>
+        <!-- gefühlt °, Luftqu, wind, luftfeuchtigkeit-->
+         <div id="moreInfo">
+          
+         </div>
       </div>
-      <!-- gefühlt °, Luftqu, wind, luftfeuchtigkeit-->
     </main>
   </body>
 </html>

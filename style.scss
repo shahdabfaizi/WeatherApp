@@ -1,0 +1,80 @@
+$background-image-path: "/public/img/sonnig.png";
+$background-image-icon: "/public/img/weather-icons.png";
+$background-color: rgba(180, 180, 180, 0.336);
+$margin-center: auto;
+$radius: 10px;
+$sonnig: -140px -400px;
+$bewolkt: -130px -280px;
+
+body {
+  margin: 0;
+}
+
+#weaterInformation {
+  height: 100vh;
+  width: 100%;
+  background-image: url(#{$background-image-path});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.weaterInformation__buttons {
+  height: 50px;
+  width: 100%;
+  background-color: black;
+
+  button {
+    height: 100%;
+    width: 50px;
+  }
+}
+
+.mainView {
+  height: 200px;
+  text-align: center;
+  margin: $margin-center;
+  display: flex;
+
+  #CityName {
+    text-align: left;
+    margin-left: 20px;
+    color: white;
+  }
+
+  #img {
+    height: 120px;
+    width: 120px;
+    background-position: $sonnig;
+    background-image: url($background-image-icon);
+    margin-left: 20px;
+  }
+}
+
+#courseOfDay {
+  height: 150px;
+  width: 90%;
+  background-color: $background-color;
+  margin: $margin-center;
+  border-radius: $radius;
+  text-align: center;
+}
+
+#prediction {
+  width: 90%;
+  height: 150px;
+  background-color: $background-color;
+  margin: $margin-center;
+  border-radius: $radius;
+  text-align: center;
+}
+
+#moreInfo {
+  width: 90%;
+  height: 200px;
+  background-color: $background-color;
+  margin: $margin-center;
+  border-radius: $radius;
+  text-align: center;
+  margin-top: 20px;
+}

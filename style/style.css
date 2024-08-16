@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+}
+
+#weaterInformation {
+  height: 100vh;
+  width: 100%;
+  background-image: url(/public/img/sonnig.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.weaterInformation__buttons {
+  height: 50px;
+  width: 100%;
+  background-color: black;
+}
+.weaterInformation__buttons button {
+  height: 100%;
+  width: 50px;
+}
+
+.mainView {
+  height: 200px;
+  text-align: center;
+  margin: auto;
+  display: flex;
+}
+.mainView #CityName {
+  text-align: left;
+  margin-left: 20px;
+  color: white;
+}
+.mainView #img {
+  height: 120px;
+  width: 120px;
+  background-position: -140px -400px;
+  background-image: url("/public/img/weather-icons.png");
+  margin-left: 20px;
+}
+
+#courseOfDay {
+  height: 150px;
+  width: 90%;
+  background-color: rgba(180, 180, 180, 0.336);
+  margin: auto;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#prediction {
+  width: 90%;
+  height: 150px;
+  background-color: rgba(180, 180, 180, 0.336);
+  margin: auto;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#moreInfo {
+  width: 90%;
+  height: 200px;
+  background-color: rgba(180, 180, 180, 0.336);
+  margin: auto;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/*# sourceMappingURL=style.css.map */
