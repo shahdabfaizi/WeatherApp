@@ -44,11 +44,10 @@ body {
   }
 
   #img {
-    height: 120px;
-    width: 120px;
-    background-position: $sonnig;
-    background-image: url($background-image-icon);
-    margin-left: 20px;
+    margin-left: 30px;
+    display: flex;
+    height: 90px;
+    width: 90px;
   }
 
   #temperature {
@@ -60,9 +59,8 @@ body {
 
   #infoNew {
     color: $text-color;
-    font-size: 20px;
+    font-size: 1rem;
     margin-top: -30px;
-    margin-left: -70px;
   }
 
   #time {
@@ -71,26 +69,49 @@ body {
     color: $text-color;
     margin-left: 250px;
   }
-
-  #highestanddeepest {
-    color: $text-color;
-    margin-left: 200px;
-    font-size: 20px;
-    margin-top: 40px;
-  }
 }
 
 @mixin section-style {
+  height: 120px;
   width: 90%;
-  height: 150px;
   background-color: $background-color;
   margin: $margin-center;
   border-radius: $radius;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
 #courseOfDay {
   @include section-style;
+
+  #forecast {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    div {
+      text-align: center;
+      width: 10%;
+      padding: 15px;
+
+      h3 {
+        font-size: 1rem;
+        color: $text-color;
+      }
+
+      p {
+        font-size: 1rem;
+        color: $text-color;
+      }
+
+      img {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
 }
 
 #prediction {

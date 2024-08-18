@@ -33,11 +33,10 @@ body {
   color: white;
 }
 .mainView #img {
-  height: 120px;
-  width: 120px;
-  background-position: -140px -400px;
-  background-image: url("/img/weather-icons.png");
-  margin-left: 20px;
+  margin-left: 30px;
+  display: flex;
+  height: 90px;
+  width: 90px;
 }
 .mainView #temperature {
   margin-top: -110px;
@@ -47,9 +46,8 @@ body {
 }
 .mainView #infoNew {
   color: white;
-  font-size: 20px;
+  font-size: 1rem;
   margin-top: -30px;
-  margin-left: -70px;
 }
 .mainView #time {
   margin-top: -180px;
@@ -57,37 +55,60 @@ body {
   color: white;
   margin-left: 250px;
 }
-.mainView #highestanddeepest {
-  color: white;
-  margin-left: 200px;
-  font-size: 20px;
-  margin-top: 40px;
-}
 
 #courseOfDay {
+  height: 120px;
   width: 90%;
-  height: 150px;
   background-color: rgba(180, 180, 180, 0.336);
   margin: 0 auto;
   border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
+}
+#courseOfDay #forecast {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+#courseOfDay #forecast div {
+  text-align: center;
+  width: 10%;
+  padding: 15px;
+}
+#courseOfDay #forecast div h3 {
+  font-size: 1rem;
+  color: white;
+}
+#courseOfDay #forecast div p {
+  font-size: 1rem;
+  color: white;
+}
+#courseOfDay #forecast div img {
+  width: 50px;
+  height: 50px;
 }
 
 #prediction {
+  height: 120px;
   width: 90%;
-  height: 150px;
   background-color: rgba(180, 180, 180, 0.336);
   margin: 0 auto;
   border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
 #moreInfo {
+  height: 120px;
   width: 90%;
-  height: 150px;
   background-color: rgba(180, 180, 180, 0.336);
   margin: 0 auto;
   border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   height: 200px;
   margin-top: 20px;

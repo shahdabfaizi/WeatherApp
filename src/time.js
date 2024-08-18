@@ -10,13 +10,11 @@ export function clock() {
 
     timeDiv.innerHTML = `${hours}:${minutes}`;
 
-    if (parseInt(hours) >= 19) {
-      icon.style.backgroundPosition = "-140px -400px";
-    } else {
-      icon.style.backgroundPosition = "-130px -280px";
-    }
-  } else {
-    console.error("Element mit der ID 'time' oder 'img' wurde nicht gefunden.");
+    //    if (parseInt(hours) >= 19) {
+    //      icon.style.backgroundPosition = "-135px -290px";
+    //    } else {
+    //      icon.style.backgroundPosition = "-140px -400px";
+    //    }
   }
 }
 
