@@ -27,8 +27,6 @@ export async function fetchWeatherData() {
       const minTemp = day.day.mintemp_c;
       const conditionText = day.day.condition.text;
       const conditionIcon = day.day.condition.icon;
-      const days = document.createElement("div");
-      days.classList.add("dayBox");
 
       document.getElementById(`day${index + 1}-date`).innerText = date;
       document.getElementById(
@@ -40,6 +38,19 @@ export async function fetchWeatherData() {
         `day${index + 1}-icon`
       ).innerHTML = `<img src="https:${conditionIcon}" alt="${conditionText}" />`;
     });
+
+    const feelsLike = data.current.feelslike_c;
+    const wind = `${data.current.wind_kph} km/h ${data.current.wind_dir}`;
+    const humidity = `${data.current.humidity}%`;
+    const airQuality = data.current.air_quality?.pm2_5 || "Keine Daten";
+
+    const moreInfo = `
+      <p>Gefühlte Temperatur: ${feelsLike}°C</p>
+      <p>Wind: ${wind}</p>
+      <p>Luftfeuchtigkeit: ${humidity}</p>
+      <p>Luftqualität (PM2.5): ${airQuality}</p>
+    `;
+    document.getElementById("moreInfo").innerHTML = moreInfo;
 
     const hourlyData = forecastDays[0].hour;
     const forecastContainer = document.getElementById("forecast");
