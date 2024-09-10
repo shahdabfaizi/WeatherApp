@@ -1,6 +1,6 @@
 export async function fetchWeatherData() {
-  const apiKey = "e8f8e0a11f9443248c0210203241708";
-  const city = "Wesendorf";
+  const apiKey = "d6beb454ce5c492bb1a200532240509";
+  const city = "Wolfsburg";
   const url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=3&lang=de`;
 
   try {
