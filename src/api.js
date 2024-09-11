@@ -1,4 +1,4 @@
-async function fetchWeatherData(lat, lon) {
+export async function fetchWeatherData(lat, lon) {
   const apiKey = "d6beb454ce5c492bb1a200532240509";
   const url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${lat},${lon}&days=3&lang=de`;
 
@@ -86,7 +86,7 @@ async function fetchWeatherData(lat, lon) {
   }
 }
 
-async function getLocation() {
+export async function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
       (position) => {
