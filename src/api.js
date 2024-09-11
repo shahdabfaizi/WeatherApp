@@ -110,4 +110,3 @@ async function fetchWeatherData(lat, lon) {
 }
 
 getLocation();
-fetchWeatherData();
