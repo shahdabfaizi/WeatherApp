@@ -1,26 +1,3 @@
-async function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        const lat = position.coords.latitude;
-        const lon = position.coords.longitude;
-        fetchWeatherData(lat, lon);
-      },
-      (error) => {
-        if (error.code === error.PERMISSION_DENIED) {
-          alert(
-            "Du hast den Standortzugriff blockiert. Bitte erlaube den Zugriff in deinen Browsereinstellungen."
-          );
-        } else {
-          alert("Fehler beim Abrufen des Standorts: " + error.message);
-        }
-      }
-    );
-  } else {
-    alert("Geolocation wird von diesem Browser nicht unterstützt.");
-  }
-}
-
 async function fetchWeatherData(lat, lon) {
   const apiKey = "d6beb454ce5c492bb1a200532240509";
   const url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${lat},${lon}&days=3&lang=de`;
@@ -106,6 +83,29 @@ async function fetchWeatherData(lat, lon) {
   } catch (error) {
     console.error("Fehler beim Abrufen der Wetterdaten:", error);
     alert("Fehler beim Abrufen der Wetterdaten.");
+  }
+}
+
+async function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const lat = position.coords.latitude;
+        const lon = position.coords.longitude;
+        fetchWeatherData(lat, lon);
+      },
+      (error) => {
+        if (error.code === error.PERMISSION_DENIED) {
+          alert(
+            "Du hast den Standortzugriff blockiert. Bitte erlaube den Zugriff in deinen Browsereinstellungen."
+          );
+        } else {
+          alert("Fehler beim Abrufen des Standorts: " + error.message);
+        }
+      }
+    );
+  } else {
+    alert("Geolocation wird von diesem Browser nicht unterstützt.");
   }
 }
 
