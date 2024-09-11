@@ -6,6 +6,12 @@ async function fetchWeatherData(lat, lon) {
     const response = await fetch(url);
     const data = await response.json();
 
+    console.log("Wetterdaten:", data);
+
+    if (!data || !data.current || !data.location) {
+      throw new Error("Ungültige Wetterdaten");
+    }
+
     const temperature = data.current.temp_c;
     const condition = data.current.condition.text;
     const cityName = data.location.name;
@@ -19,7 +25,6 @@ async function fetchWeatherData(lat, lon) {
     ).innerHTML = `<img src="https:${iconUrl}" alt="${condition}" />`;
 
     const forecastDays = data.forecast.forecastday;
-
     forecastDays.forEach((day, index) => {
       const date = day.date;
       const maxTemp = day.day.maxtemp_c;
@@ -78,10 +83,12 @@ async function getLocation() {
       },
       (error) => {
         console.error("Fehler beim Abrufen des Standorts:", error);
+        alert("Fehler beim Abrufen des Standorts.");
       }
     );
   } else {
     console.error("Geolocation wird von diesem Browser nicht unterstützt.");
+    alert("Geolocation wird von diesem Browser nicht unterstützt.");
   }
 }
 
