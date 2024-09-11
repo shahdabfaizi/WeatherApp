@@ -93,5 +93,4 @@ async function getLocation() {
 }
 
 getLocation();
-
-//test
+fetchWeatherData();
