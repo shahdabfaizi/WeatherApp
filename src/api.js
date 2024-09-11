@@ -21,12 +21,9 @@ async function getLocation() {
   }
 }
 
-getLocation();
-
-export async function fetchWeatherData() {
+async function fetchWeatherData(lat, lon) {
   const apiKey = "d6beb454ce5c492bb1a200532240509";
-  const city = "Wolfsburg";
-  const url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=3&lang=de`;
+  const url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${lat},${lon}&days=3&lang=de`;
 
   try {
     const response = await fetch(url);
@@ -108,6 +105,7 @@ export async function fetchWeatherData() {
     });
   } catch (error) {
     console.error("Fehler beim Abrufen der Wetterdaten:", error);
+    alert("Fehler beim Abrufen der Wetterdaten.");
   }
 }
 
