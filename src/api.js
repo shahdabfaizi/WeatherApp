@@ -1,3 +1,19 @@
+document
+  .querySelector(".search-bar")
+  .addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    // Stadtname aus dem Eingabefeld holen
+    const city = document.querySelector('input[name="search"]').value;
+
+    if (city) {
+      // Wetterdaten für die eingegebene Stadt abrufen
+      fetchWeatherData(city);
+    } else {
+      alert("Bitte geben Sie einen gültigen Stadtnamen ein.");
+    }
+  });
+
 export async function fetchWeatherData(lat, lon) {
   const apiKey = "d6beb454ce5c492bb1a200532240509";
   const url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${lat},${lon}&days=3&lang=de`;

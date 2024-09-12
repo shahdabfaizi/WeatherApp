@@ -8,12 +8,34 @@
     <title>Document</title>
   </head>
   <body>
-    
     <main>
       <div id="weaterInformation">
         <div class="weaterInformation__buttons">
-          <button>Back</button>
-          <button>Favorit</button>
+          <div class="menu-btn" id="menu-btn">
+            <div class="menu-btn__burger"></div>
+          </div>
+          <nav class="nav" id="nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="#" class="nav__link">Stadt</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Stadt</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Stadt</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Stadt</a>
+              </li>
+            </ul>
+          </nav>
+          <form action="" class="search-bar">
+            <input type="search" name="search" pattern=".*\S.*" required />
+            <button class="search-btn" type="submit">
+              <span>Search</span>
+            </button>
+          </form>
         </div>
         <!-- Aktuelle CityName, Temperatur, Wetter, Höchste & Tiefste -->
         <div class="mainView">
@@ -52,5 +74,46 @@
         <div id="moreInfo"></div>
       </div>
     </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menuBtn = document.getElementById("menu-btn");
+        const nav = document.getElementById("nav");
+        const navLinks = document.querySelectorAll(".nav__link");
+
+        menuBtn.addEventListener("click", () => {
+          menuBtn.classList.toggle("open");
+          nav.classList.toggle("open");
+        });
+
+        navLinks.forEach((link) => {
+          link.addEventListener("click", () => {
+            menuBtn.classList.remove("open");
+            nav.classList.remove("open");
+          });
+        });
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        let currentSlide = 0;
+        const slides = document.querySelectorAll(".slide");
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+          slides.forEach((slide, i) => {
+            slide.style.display = i === index ? "block" : "none";
+          });
+        }
+
+        function nextSlide() {
+          currentSlide = (currentSlide + 1) % totalSlides;
+          showSlide(currentSlide);
+        }
+
+        // Start the slideshow
+        showSlide(currentSlide);
+        setInterval(nextSlide, 5000); // Change image every 5 seconds
+      });
+    </script>
   </body>
 </html>
