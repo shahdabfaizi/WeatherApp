@@ -15,19 +15,8 @@
             <div class="menu-btn__burger"></div>
           </div>
           <nav class="nav" id="nav">
-            <ul class="nav__list">
-              <li class="nav__item">
-                <a href="#" class="nav__link">Stadt</a>
-              </li>
-              <li class="nav__item">
-                <a href="#" class="nav__link">Stadt</a>
-              </li>
-              <li class="nav__item">
-                <a href="#" class="nav__link">Stadt</a>
-              </li>
-              <li class="nav__item">
-                <a href="#" class="nav__link">Stadt</a>
-              </li>
+            <ul class="nav__list" id="cityList">
+              <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
             </ul>
           </nav>
           <form action="" class="search-bar">
@@ -121,21 +110,34 @@
         .getElementById("saveCityBtn")
         .addEventListener("click", function () {
           const cityName = document.getElementById("CityName").innerText;
+          let savedCities =
+            JSON.parse(localStorage.getItem("savedCities")) || [];
 
-          localStorage.setItem("savedCity", cityName);
-
-          document.getElementById(
-            "savedCityDisplay"
-          ).innerText = `Gespeicherte Stadt: ${cityName}`;
+          if (!savedCities.includes(cityName)) {
+            savedCities.push(cityName);
+            localStorage.setItem("savedCities", JSON.stringify(savedCities));
+            updateCityList();
+          }
         });
 
+      function updateCityList() {
+        const cityList = document.getElementById("cityList");
+        let savedCities = JSON.parse(localStorage.getItem("savedCities")) || [];
+
+        cityList.innerHTML = `
+    <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
+  `;
+
+        savedCities.forEach((city) => {
+          let listItem = document.createElement("li");
+          listItem.classList.add("nav__item");
+          listItem.innerHTML = `<a href="#" class="nav__link">${city}</a>`;
+          cityList.appendChild(listItem);
+        });
+      }
+
       window.onload = function () {
-        const savedCity = localStorage.getItem("savedCity");
-        if (savedCity) {
-          document.getElementById(
-            "savedCityDisplay"
-          ).innerText = `Gespeicherte Stadt: ${savedCity}`;
-        }
+        updateCityList();
       };
     </script>
   </body>
