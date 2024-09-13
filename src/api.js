@@ -3,11 +3,9 @@ document
   .addEventListener("submit", async function (e) {
     e.preventDefault();
 
-    // Stadtname aus dem Eingabefeld holen
     const city = document.querySelector('input[name="search"]').value;
 
     if (city) {
-      // Wetterdaten für die eingegebene Stadt abrufen
       fetchWeatherData(city);
     } else {
       alert("Bitte geben Sie einen gültigen Stadtnamen ein.");

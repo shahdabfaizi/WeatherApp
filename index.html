@@ -36,6 +36,11 @@
               <span>Search</span>
             </button>
           </form>
+          <div class="name-storage">
+            <input type="text" id="nameInput" placeholder="Name eingeben" />
+            <button id="saveNameBtn">Speichern</button>
+            <p id="savedNameDisplay"></p>
+          </div>
         </div>
         <!-- Aktuelle CityName, Temperatur, Wetter, Höchste & Tiefste -->
         <div class="mainView">
@@ -110,10 +115,31 @@
           showSlide(currentSlide);
         }
 
-        // Start the slideshow
         showSlide(currentSlide);
-        setInterval(nextSlide, 5000); // Change image every 5 seconds
+        setInterval(nextSlide, 5000);
       });
+
+      document
+        .getElementById("saveNameBtn")
+        .addEventListener("click", function () {
+          const name = document.getElementById("nameInput").value;
+          if (name) {
+            localStorage.setItem("savedName", name);
+
+            document.getElementById(
+              "savedNameDisplay"
+            ).innerText = `Gespeicherter Name: ${name}`;
+          }
+        });
+
+      window.onload = function () {
+        const savedName = localStorage.getItem("savedName");
+        if (savedName) {
+          document.getElementById(
+            "savedNameDisplay"
+          ).innerText = `Gespeicherter Name: ${savedName}`;
+        }
+      };
     </script>
   </body>
 </html>
