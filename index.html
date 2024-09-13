@@ -36,10 +36,8 @@
               <span>Search</span>
             </button>
           </form>
-          <div class="name-storage">
-            <input type="text" id="nameInput" placeholder="Name eingeben" />
-            <button id="saveNameBtn">Speichern</button>
-            <p id="savedNameDisplay"></p>
+          <div class="city-display">
+            <button id="saveCityBtn">Stadt speichern</button>
           </div>
         </div>
         <!-- Aktuelle CityName, Temperatur, Wetter, Höchste & Tiefste -->
@@ -120,24 +118,23 @@
       });
 
       document
-        .getElementById("saveNameBtn")
+        .getElementById("saveCityBtn")
         .addEventListener("click", function () {
-          const name = document.getElementById("nameInput").value;
-          if (name) {
-            localStorage.setItem("savedName", name);
+          const cityName = document.getElementById("CityName").innerText;
 
-            document.getElementById(
-              "savedNameDisplay"
-            ).innerText = `Gespeicherter Name: ${name}`;
-          }
+          localStorage.setItem("savedCity", cityName);
+
+          document.getElementById(
+            "savedCityDisplay"
+          ).innerText = `Gespeicherte Stadt: ${cityName}`;
         });
 
       window.onload = function () {
-        const savedName = localStorage.getItem("savedName");
-        if (savedName) {
+        const savedCity = localStorage.getItem("savedCity");
+        if (savedCity) {
           document.getElementById(
-            "savedNameDisplay"
-          ).innerText = `Gespeicherter Name: ${savedName}`;
+            "savedCityDisplay"
+          ).innerText = `Gespeicherte Stadt: ${savedCity}`;
         }
       };
     </script>
