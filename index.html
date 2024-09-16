@@ -15,9 +15,7 @@
             <div class="menu-btn__burger"></div>
           </div>
           <nav class="nav" id="nav">
-            <ul class="nav__list" id="cityList">
-              <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
-            </ul>
+            <ul class="nav__list" id="cityList"></ul>
           </nav>
           <form action="" class="search-bar">
             <input type="search" name="search" pattern=".*\S.*" required />
@@ -66,79 +64,5 @@
         <div id="moreInfo"></div>
       </div>
     </main>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const menuBtn = document.getElementById("menu-btn");
-        const nav = document.getElementById("nav");
-        const navLinks = document.querySelectorAll(".nav__link");
-
-        menuBtn.addEventListener("click", () => {
-          menuBtn.classList.toggle("open");
-          nav.classList.toggle("open");
-        });
-
-        navLinks.forEach((link) => {
-          link.addEventListener("click", () => {
-            menuBtn.classList.remove("open");
-            nav.classList.remove("open");
-          });
-        });
-      });
-
-      document.addEventListener("DOMContentLoaded", () => {
-        let currentSlide = 0;
-        const slides = document.querySelectorAll(".slide");
-        const totalSlides = slides.length;
-
-        function showSlide(index) {
-          slides.forEach((slide, i) => {
-            slide.style.display = i === index ? "block" : "none";
-          });
-        }
-
-        function nextSlide() {
-          currentSlide = (currentSlide + 1) % totalSlides;
-          showSlide(currentSlide);
-        }
-
-        showSlide(currentSlide);
-        setInterval(nextSlide, 5000);
-      });
-
-      document
-        .getElementById("saveCityBtn")
-        .addEventListener("click", function () {
-          const cityName = document.getElementById("CityName").innerText;
-          let savedCities =
-            JSON.parse(localStorage.getItem("savedCities")) || [];
-
-          if (!savedCities.includes(cityName)) {
-            savedCities.push(cityName);
-            localStorage.setItem("savedCities", JSON.stringify(savedCities));
-            updateCityList();
-          }
-        });
-
-      function updateCityList() {
-        const cityList = document.getElementById("cityList");
-        let savedCities = JSON.parse(localStorage.getItem("savedCities")) || [];
-
-        cityList.innerHTML = `
-    <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
-  `;
-
-        savedCities.forEach((city) => {
-          let listItem = document.createElement("li");
-          listItem.classList.add("nav__item");
-          listItem.innerHTML = `<a href="#" class="nav__link">${city}</a>`;
-          cityList.appendChild(listItem);
-        });
-      }
-
-      window.onload = function () {
-        updateCityList();
-      };
-    </script>
   </body>
 </html>
