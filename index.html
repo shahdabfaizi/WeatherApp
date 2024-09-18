@@ -8,25 +8,31 @@
     <title>Document</title>
   </head>
   <body>
-    <main>
-      <div id="weaterInformation">
-        <div class="weaterInformation__buttons">
-          <div class="menu-btn" id="menu-btn">
-            <div class="menu-btn__burger"></div>
-          </div>
-          <nav class="nav" id="nav">
-            <ul class="nav__list" id="cityList"></ul>
-          </nav>
-          <form action="" class="search-bar">
-            <input type="search" name="search" pattern=".*\S.*" required />
-            <button class="search-btn" type="submit">
-              <span>Search</span>
-            </button>
-          </form>
-          <div class="city-display">
-            <button id="saveCityBtn">Stadt speichern</button>
-          </div>
+    <!--- Menu/Suche/Speichern --->
+    <header>
+      <div>
+        <div class="menu-btn" id="menu-btn">
+          <div class="menu-btn__burger"></div>
         </div>
+        <nav class="nav" id="nav">
+          <ul class="nav__list" id="cityList"></ul>
+        </nav>
+      </div>
+      <div>
+        <form action="" class="search-bar">
+          <input type="search" name="search" pattern=".*\S.*" required />
+          <button class="search-btn" type="submit">
+            <span>Search</span>
+          </button>
+        </form>
+      </div>
+      <div class="city-display">
+        <button id="saveCityBtn">Stadt speichern</button>
+      </div>
+    </header>
+
+    <main>
+      <div>
         <!-- Aktuelle CityName, Temperatur, Wetter, Höchste & Tiefste -->
         <div class="mainView">
           <h1 id="CityName"></h1>
