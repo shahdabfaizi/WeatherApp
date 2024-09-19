@@ -46,18 +46,27 @@ function showWeatherForCity(cityName) {
 
 document.getElementById("saveCityBtn").addEventListener("click", function () {
   const cityName = document.getElementById("CityName").innerText;
+
   let savedCities = JSON.parse(localStorage.getItem("savedCities")) || [];
 
-  if (!savedCities.includes(cityName)) {
+  // Überprüfen, ob der Stadtname bereits gespeichert ist
+  const cityExists = savedCities.some((city) => city === cityName);
+
+  if (!cityExists) {
+    // Stadt speichern, wenn sie noch nicht vorhanden ist
     savedCities.push(cityName);
     localStorage.setItem("savedCities", JSON.stringify(savedCities));
     updateCityList();
+  } else {
+    console.log(`Die Stadt "${cityName}" ist bereits gespeichert.`);
   }
 });
 
 function updateCityList() {
   const cityList = document.getElementById("cityList");
   let savedCities = JSON.parse(localStorage.getItem("savedCities")) || [];
+
+  cityList.innerHTML = ""; // Leeren der Liste, um Duplikate zu vermeiden
 
   savedCities.forEach((city) => {
     let listItem = document.createElement("li");

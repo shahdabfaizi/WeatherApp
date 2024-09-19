@@ -10,25 +10,23 @@
   <body>
     <!--- Menu/Suche/Speichern --->
     <header>
-      <div>
-        <div class="menu-btn" id="menu-btn">
-          <div class="menu-btn__burger"></div>
-        </div>
-        <nav class="nav" id="nav">
-          <ul class="nav__list" id="cityList"></ul>
-        </nav>
+      <div class="menu-btn" id="menu-btn">
+        <div class="menu-btn__burger"></div>
       </div>
-      <div>
-        <form action="" class="search-bar">
-          <input type="search" name="search" pattern=".*\S.*" required />
-          <button class="search-btn" type="submit">
-            <span>Search</span>
-          </button>
-        </form>
-      </div>
-      <div class="city-display">
-        <button id="saveCityBtn">Stadt speichern</button>
-      </div>
+      <nav class="nav" id="nav">
+        <ul class="nav__list" id="cityList"></ul>
+      </nav>
+
+      <form action="" class="search-bar">
+        <input type="search" name="search" pattern=".*\S.*" required />
+        <button class="search-btn" type="submit">
+          <span>Search</span>
+        </button>
+      </form>
+
+      <button id="saveCityBtn">
+        <img id="bookmarkIcon" src="img/icons8-bookmark-100.png" alt="img 1" />
+      </button>
     </header>
 
     <main>
@@ -70,5 +68,7 @@
         <div id="moreInfo"></div>
       </div>
     </main>
+
+    <script></script>
   </body>
 </html>
