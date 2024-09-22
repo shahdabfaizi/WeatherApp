@@ -1,4 +1,14 @@
 @media (max-width: 600px) {
+  body {
+    margin: 0;
+    width: 100%;
+    background-color: #e0e0e0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
   header {
     height: 55px;
     width: 100%;
@@ -191,7 +201,7 @@
   }
   header .search-bar input:focus + .search-btn,
   header .search-bar input:valid + .search-btn {
-    background: #7e7e7e;
+    background: #e0e0e0;
     border-radius: 0 0.375em 0.375em 0;
     transform: scale(1);
   }
@@ -204,133 +214,141 @@
   header .search-bar input:focus + .search-btn:hover,
   header .search-bar input:valid + .search-btn:hover,
   header .search-bar input:valid:not(:focus) + .search-btn:focus {
-    background: #7e7e7e;
+    background: #e0e0e0;
   }
   header .search-bar input:focus + .search-btn:active,
   header .search-bar input:valid + .search-btn:active {
     transform: translateY(1px);
   }
   header #saveCityBtn {
-    height: 50px;
-    width: 50px;
+    margin-top: 8px;
+    margin-right: 10px;
+    height: 40px;
+    width: 40px;
     display: flex;
     float: right;
+    background-color: #f1f1f1;
   }
-  body {
-    margin: 0;
+  main .HeadMain {
+    height: 200px;
     width: 100%;
-    background-color: #7e7e7e;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    overflow-x: hidden;
-    overflow-y: auto;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
   }
-}
-.mainView {
-  height: 200px;
-  text-align: center;
-  margin: 0 auto;
-  display: block;
-}
-.mainView #CityName {
-  text-align: left;
-  margin-left: 20px;
-  color: white;
-}
-.mainView #img {
-  margin-left: 30px;
-  display: flex;
-  height: 90px;
-  width: 90px;
-}
-.mainView #temperature {
-  margin-top: -110px;
-  font-size: 35px;
-  margin-left: -60px;
-  color: white;
-}
-.mainView #infoNew {
-  color: white;
-  font-size: 1rem;
-  margin-top: -30px;
-}
-.mainView #time {
-  margin-top: -180px;
-  font-size: 25px;
-  color: white;
-  margin-left: 250px;
-}
-
-#courseOfDay {
-  height: 165px;
-  width: 90%;
-  background-color: rgba(180, 180, 180, 0.336);
-  margin: 0 auto;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  overflow-x: auto;
-  overflow-y: hidden;
-}
-#courseOfDay #forecast {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 10px;
-  margin-top: -30px;
-}
-#courseOfDay .timeBox {
-  width: 30%;
-  height: 30px;
-}
-
-#forecastDays {
-  height: 165px;
-  width: 90%;
-  background-color: rgba(180, 180, 180, 0.336);
-  margin: 0 auto;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  overflow-x: auto;
-  overflow-y: hidden;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 10px;
-  margin-top: 30px;
-}
-#forecastDays #day1 {
-  width: 30%;
-  height: 30px;
-  margin-top: -200px;
-}
-#forecastDays #day2 {
-  width: 30%;
-  height: 30px;
-  margin-top: -200px;
-}
-#forecastDays #day3 {
-  width: 30%;
-  height: 30px;
-  margin-top: -200px;
-}
-
-#moreInfo {
-  height: 165px;
-  width: 90%;
-  background-color: rgba(180, 180, 180, 0.336);
-  margin: 0 auto;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  overflow-x: auto;
-  overflow-y: hidden;
-  margin-top: 30px;
+  main .HeadMain .NameBox {
+    padding: 0px 20px;
+    background-color: #fff;
+    text-align: center;
+    position: absolute;
+    border-radius: 10px;
+    margin: 20px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  main .HeadMain #img {
+    margin-top: 100px;
+    margin-left: 20px;
+    border-radius: 10px;
+    position: absolute;
+    padding: 10px 24px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  main .HeadMain .TandIBox {
+    background-color: #fff;
+    height: 88px;
+    width: 250px;
+    position: absolute;
+    margin-left: 150px;
+    margin-top: 100px;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  main .HeadMain #temperature {
+    font-family: "Bebas Neue", Courier;
+    font-weight: bold;
+    width: 100%;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  main .HeadMain #infoNew {
+    width: 100%;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  main .HeadMain #time {
+    padding: 23.5px 23px;
+    border-radius: 10px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    position: absolute;
+    right: 10px;
+    top: 35px;
+    transform: translateY(-50%);
+    font-family: "Bebas Neue", Courier;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  #courseOfDay {
+    height: 170px;
+    width: 80%;
+    margin-left: 20px;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    background-color: #fff;
+  }
+  #forecast {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    margin-top: -30px;
+  }
+  .timeBox {
+    width: 30%;
+    height: 30px;
+  }
+  #forecastDays {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    background-color: #fff;
+    text-align: center;
+    width: 90%;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  #forecastDays #day1 {
+    width: 30%;
+  }
+  #forecastDays #day2 {
+    width: 30%;
+  }
+  #forecastDays #day3 {
+    width: 30%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

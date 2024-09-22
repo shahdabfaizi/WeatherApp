@@ -6,8 +6,14 @@
     <script src="java.js" type="module"></script>
     <link rel="stylesheet" href="style/style.css" />
     <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body>
+  <body
+    style="font-family: 'Pixelify Sans', sans-serif; text-transform: uppercase"
+  >
     <!--- Menu/Suche/Speichern --->
     <header>
       <div class="menu-btn" id="menu-btn">
@@ -30,45 +36,45 @@
     </header>
 
     <main>
-      <div>
+      <div class="HeadMain">
         <!-- Aktuelle CityName, Temperatur, Wetter, Höchste & Tiefste -->
-        <div class="mainView">
-          <h1 id="CityName"></h1>
-          <div id="img"></div>
-          <h3 id="temperature"></h3>
-          <h6 id="infoNew"></h6>
-          <h3 id="time"></h3>
+        <div class="NameBox">
+          <h2 id="CityName"></h2>
         </div>
-        <!-- gesammt verlauf von dem ganzen tag uhrzeiten, wetterbedinungen, und gradzahlen -->
-        <div id="courseOfDay">
-          <div id="forecast"></div>
+        <div id="img"></div>
+        <div class="TandIBox">
+          <h2 id="temperature"></h2>
+          <h2 id="infoNew"></h2>
         </div>
-
-        <div id="forecastDays">
-          <div id="day1">
-            <h3 id="day1-date"></h3>
-            <div id="day1-icon"></div>
-            <p id="day1-temp"></p>
-            <p id="day1-condition"></p>
-          </div>
-          <div id="day2">
-            <h3 id="day2-date"></h3>
-            <div id="day2-icon"></div>
-            <p id="day2-temp"></p>
-            <p id="day2-condition"></p>
-          </div>
-          <div id="day3">
-            <h3 id="day3-date"></h3>
-            <div id="day3-icon"></div>
-            <p id="day3-temp"></p>
-            <p id="day3-condition"></p>
-          </div>
-        </div>
-        <!-- gefühlt °, Luftqu, wind, luftfeuchtigkeit-->
-        <div id="moreInfo"></div>
+        <h3 id="time"></h3>
       </div>
-    </main>
+      <!-- gesammt verlauf von dem ganzen tag uhrzeiten, wetterbedinungen, und gradzahlen -->
+      <div id="courseOfDay">
+        <div id="forecast"></div>
+      </div>
 
-    <script></script>
+      <div id="forecastDays">
+        <div id="day1">
+          <h3 id="day1-date"></h3>
+          <div id="day1-icon"></div>
+          <p id="day1-temp"></p>
+          <p id="day1-condition"></p>
+        </div>
+        <div id="day2">
+          <h3 id="day2-date"></h3>
+          <div id="day2-icon"></div>
+          <p id="day2-temp"></p>
+          <p id="day2-condition"></p>
+        </div>
+        <div id="day3">
+          <h3 id="day3-date"></h3>
+          <div id="day3-icon"></div>
+          <p id="day3-temp"></p>
+          <p id="day3-condition"></p>
+        </div>
+      </div>
+      <!-- gefühlt °, Luftqu, wind, luftfeuchtigkeit-->
+      <div id="moreInfo"></div>
+    </main>
   </body>
 </html>

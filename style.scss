@@ -1,6 +1,5 @@
-$background-color-back: #7e7e7e;
+$background-color-back: #e0e0e0;
 $background-image-icon: "/img/weather-icons.png";
-$background-color: rgba(180, 180, 180, 0.336);
 $margin-center: 0 auto;
 $radius: 10px;
 $sonnig: -140px -400px;
@@ -8,6 +7,17 @@ $bewolkt: -130px -280px;
 $text-color: white;
 
 @media (max-width: 600px) {
+  body {
+    margin: 0;
+    width: 100%;
+    background-color: $background-color-back;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
   header {
     height: 55px;
     width: 100%;
@@ -239,79 +249,114 @@ $text-color: white;
     }
 
     #saveCityBtn {
-      height: 50px;
-      width: 50px;
+      margin-top: 8px;
+      margin-right: 10px;
+      height: 40px;
+      width: 40px;
       display: flex;
       float: right;
+      background-color: #f1f1f1;
     }
   }
-  body {
-    margin: 0;
-    width: 100%;
-    background-color: $background-color-back;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    overflow-x: hidden;
-    overflow-y: auto;
+
+  main {
+    .HeadMain {
+      height: 200px;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+
+      .NameBox {
+        padding: 0px 20px;
+        background-color: #fff;
+        text-align: center;
+        position: absolute;
+        border-radius: 10px;
+        margin: 20px 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      #img {
+        margin-top: 100px;
+        margin-left: 20px;
+        border-radius: 10px;
+        position: absolute;
+        padding: 10px 24px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .TandIBox {
+        background-color: #fff;
+        height: 88px;
+        width: 250px;
+        position: absolute;
+        margin-left: 150px;
+        margin-top: 100px;
+        border-radius: 10px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        overflow: hidden;
+        box-sizing: border-box;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      #temperature {
+        font-family: "Bebas Neue", Courier;
+        font-weight: bold;
+        width: 100%;
+        height: 44px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      #infoNew {
+        width: 100%;
+        height: 44px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      #time {
+        padding: 23.5px 23px;
+        border-radius: 10px;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 20px;
+        position: absolute;
+        right: 10px;
+        top: 35px;
+        transform: translateY(-50%);
+        font-family: "Bebas Neue", Courier;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+    }
   }
-}
 
-.mainView {
-  height: 200px;
-  text-align: center;
-  margin: $margin-center;
-  display: block;
-
-  #CityName {
-    text-align: left;
+  #courseOfDay {
+    height: 170px;
+    width: 80%;
     margin-left: 20px;
-    color: $text-color;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    background-color: #fff;
   }
-
-  #img {
-    margin-left: 30px;
-    display: flex;
-    height: 90px;
-    width: 90px;
-  }
-
-  #temperature {
-    margin-top: -110px;
-    font-size: 35px;
-    margin-left: -60px;
-    color: $text-color;
-  }
-
-  #infoNew {
-    color: $text-color;
-    font-size: 1rem;
-    margin-top: -30px;
-  }
-
-  #time {
-    margin-top: -180px;
-    font-size: 25px;
-    color: $text-color;
-    margin-left: 250px;
-  }
-}
-
-@mixin section-style {
-  height: 165px;
-  width: 90%;
-  background-color: $background-color;
-  margin: $margin-center;
-  border-radius: $radius;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  overflow-x: auto;
-  overflow-y: hidden;
-}
-
-#courseOfDay {
-  @include section-style;
 
   #forecast {
     display: flex;
@@ -325,36 +370,28 @@ $text-color: white;
     width: 30%;
     height: 30px;
   }
-}
 
-#forecastDays {
-  @include section-style;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 10px;
-  margin-top: 30px;
+  #forecastDays {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    background-color: #fff;
+    text-align: center;
+    width: 90%;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
-  #day1 {
-    width: 30%;
-    height: 30px;
-    margin-top: -200px;
+    #day1 {
+      width: 30%;
+    }
+
+    #day2 {
+      width: 30%;
+    }
+
+    #day3 {
+      width: 30%;
+    }
   }
-
-  #day2 {
-    width: 30%;
-    height: 30px;
-    margin-top: -200px;
-  }
-
-  #day3 {
-    width: 30%;
-    height: 30px;
-    margin-top: -200px;
-  }
-}
-
-#moreInfo {
-  @include section-style;
-  margin-top: 30px;
 }
