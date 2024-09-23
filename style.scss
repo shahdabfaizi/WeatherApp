@@ -253,7 +253,6 @@ $text-color: white;
       margin-right: 10px;
       height: 30px;
       width: 30px;
-      display: flex;
       float: right;
       background-color: #f1f1f1;
     }
@@ -295,7 +294,7 @@ $text-color: white;
       .TandIBox {
         background-color: #fff;
         height: 88px;
-        width: 250px;
+        width: 100%;
         position: absolute;
         margin-left: 150px;
         margin-top: 100px;
