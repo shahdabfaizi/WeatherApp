@@ -14,7 +14,7 @@ document
 
 export async function fetchWeatherData(lat, lon) {
   const apiKey = "d6beb454ce5c492bb1a200532240509";
-  const url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${lat},${lon}&days=3&lang=de`;
+  const url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${lat},${lon}&days=2&lang=de`;
 
   try {
     const response = await fetch(url);
@@ -38,6 +38,7 @@ export async function fetchWeatherData(lat, lon) {
       "img"
     ).innerHTML = `<img src="https:${iconUrl}" alt="${condition}" />`;
 
+    // Anzeige der täglichen Vorhersage
     const forecastDays = data.forecast.forecastday;
     forecastDays.forEach((day, index) => {
       const date = day.date;
@@ -57,6 +58,7 @@ export async function fetchWeatherData(lat, lon) {
       ).innerHTML = `<img src="https:${conditionIcon}" alt="${conditionText}" />`;
     });
 
+    // Weitere Wetterinfos
     const feelsLike = data.current.feelslike_c;
     const wind = `${data.current.wind_kph} km/h ${data.current.wind_dir}`;
     const humidity = `${data.current.humidity}%`;
@@ -70,10 +72,24 @@ export async function fetchWeatherData(lat, lon) {
     `;
     document.getElementById("moreInfo").innerHTML = moreInfo;
 
-    const hourlyData = forecastDays[0].hour;
+    // Anzeige der stündlichen Vorhersage für die nächsten 24 Stunden
+    const currentHour = new Date().getHours(); // Aktuelle Stunde
+    const hourlyData = [...forecastDays[0].hour, ...forecastDays[1].hour]; // Kombiniere die Stunden von heute und morgen
+    const next24Hours = hourlyData.filter((hourData) => {
+      const hour = new Date(hourData.time).getHours();
+      const day = new Date(hourData.time).getDate();
+      return (
+        (hour >= currentHour && day === new Date().getDate()) ||
+        (day === new Date().getDate() + 1 && hour < currentHour)
+      );
+    });
+
     const forecastContainer = document.getElementById("forecast");
 
-    hourlyData.forEach((hourData) => {
+    // Leere das Container-Element
+    forecastContainer.innerHTML = "";
+
+    next24Hours.forEach((hourData) => {
       const hourBlock = document.createElement("div");
       hourBlock.classList.add("timeBox");
 
