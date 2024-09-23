@@ -353,6 +353,7 @@ $text-color: white;
     height: 170px;
     width: 80%;
     margin-left: 20px;
+    margin-top: 15px;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -397,6 +398,17 @@ $text-color: white;
     #day3 {
       width: 30%;
     }
+  }
+
+  #moreInfo {
+    background-color: #fff;
+    width: 90%;
+    margin-left: 20px;
+    border-radius: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
   }
 }
 
