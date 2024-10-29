@@ -38,7 +38,6 @@ export async function fetchWeatherData(lat, lon) {
       "img"
     ).innerHTML = `<img src="https:${iconUrl}" alt="${condition}" />`;
 
-    // Anzeige der täglichen Vorhersage
     const forecastDays = data.forecast.forecastday;
     forecastDays.forEach((day, index) => {
       const date = day.date;
@@ -58,7 +57,6 @@ export async function fetchWeatherData(lat, lon) {
       ).innerHTML = `<img src="https:${conditionIcon}" alt="${conditionText}" />`;
     });
 
-    // Weitere Wetterinfos
     const feelsLike = data.current.feelslike_c;
     const wind = `${data.current.wind_kph} km/h ${data.current.wind_dir}`;
     const humidity = `${data.current.humidity}%`;
@@ -72,8 +70,7 @@ export async function fetchWeatherData(lat, lon) {
     `;
     document.getElementById("moreInfo").innerHTML = moreInfo;
 
-    // Anzeige der stündlichen Vorhersage für die nächsten 24 Stunden
-    const currentHour = new Date().getHours(); // Aktuelle Stunde
+    const currentHour = new Date().getHours();
     const hourlyData = [...forecastDays[0].hour, ...forecastDays[1].hour]; // Kombiniere die Stunden von heute und morgen
     const next24Hours = hourlyData.filter((hourData) => {
       const hour = new Date(hourData.time).getHours();
@@ -86,7 +83,6 @@ export async function fetchWeatherData(lat, lon) {
 
     const forecastContainer = document.getElementById("forecast");
 
-    // Leere das Container-Element
     forecastContainer.innerHTML = "";
 
     next24Hours.forEach((hourData) => {

@@ -49,11 +49,9 @@ document.getElementById("saveCityBtn").addEventListener("click", function () {
 
   let savedCities = JSON.parse(localStorage.getItem("savedCities")) || [];
 
-  // Überprüfen, ob der Stadtname bereits gespeichert ist
   const cityExists = savedCities.some((city) => city === cityName);
 
   if (!cityExists) {
-    // Stadt speichern, wenn sie noch nicht vorhanden ist
     savedCities.push(cityName);
     localStorage.setItem("savedCities", JSON.stringify(savedCities));
     updateCityList();
@@ -66,7 +64,7 @@ function updateCityList() {
   const cityList = document.getElementById("cityList");
   let savedCities = JSON.parse(localStorage.getItem("savedCities")) || [];
 
-  cityList.innerHTML = ""; // Leeren der Liste, um Duplikate zu vermeiden
+  cityList.innerHTML = "";
 
   savedCities.forEach((city) => {
     let listItem = document.createElement("li");
